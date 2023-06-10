@@ -77,30 +77,6 @@ public class EventDetailsActivity extends AppCompatActivity {
         finish();
     }
 
-    /*
-    // method for sending SMS messages when new events are created & setting up notifications
-    public void addNotifications() {
-        SmsManager smsManager = SmsManager.getDefault();
-        try   {
-            smsManager.sendTextMessage("+650-555-1212",null, "New Event added!", null, null);
-        }
-       catch (Exception e) {
-            System.out.println(e);
-       }
-
-        // notifications text
-        String text = "Check messages for new event!";
-        Notification notification = new NotificationCompat.Builder(this,Registration.CHANNEL_APP_EVENTS)
-                .setSmallIcon(R.drawable.eventtimelogo)
-                .setContentTitle(getString(R.string.app_name))
-                .setContentText(text)
-                .setPriority(NotificationCompat.PRIORITY_LOW)
-                .build();
-
-        NotificationManager manager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
-        manager.notify(0, notification);
-    }
-    */
 
     // method removing events from database
     public void deleteEvent(View view)    {
