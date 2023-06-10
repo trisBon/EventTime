@@ -27,9 +27,9 @@
     <string name="eventDetails">Details</string>
     <string name="add">+</string>
     <string name="buttonDelete">Delete</string>
-    <string name="eventNameHint">Ex: Clarice\'s Skating Party</string>
-    <string name="eventDateHint">Ex: Satruday, July 23rd</string>
-    <string name="eventTimeHint">Ex: 4:00-6:00 p.m.</string>
-    <string name="eventDetailsHint">Ex: 80\'s Dresscode</string>
+    <string name="eventNameHint">Ex: Claire\'s Skating Party</string>
+    <string name="eventDateHint">Ex: Saturday, July 3rd</string>
+    <string name="eventTimeHint">Ex: 4:00 to 6:00 p.m.</string>
+    <string name="eventDetailsHint">Ex: 80\'s </string>
 
 </resources>
