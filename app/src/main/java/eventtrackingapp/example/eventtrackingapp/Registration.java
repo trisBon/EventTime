@@ -72,38 +72,4 @@ public class Registration extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /*
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                                           int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case 1:
-                // If request is cancelled, the result arrays are empty.
-                if (grantResults.length > 0 &&
-                        grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                }
-        }
-        String user = String.valueOf(editTextUsername.getText());
-        finish();
-
-        Intent intent = new Intent(this, EventGrid.class);
-        intent.putExtra(User.USER_EXTRA,user);
-        startActivity(intent);
-    }
-
-    private void createAppNotificationChannel() {
-        if (Build.VERSION.SDK_INT < 26) return;
-
-        int importance = NotificationManager.IMPORTANCE_LOW;
-        NotificationChannel channel = new NotificationChannel(CHANNEL_APP_EVENTS, "Your Name", importance);
-        channel.setDescription("Welcome");
-
-        // Register channel with system
-        NotificationManager notificationManager = getSystemService(NotificationManager.class);
-        notificationManager.createNotificationChannel(channel);
-    }
-
-    */
-
 }
