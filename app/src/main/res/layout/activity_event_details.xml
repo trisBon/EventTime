@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="400dp"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:layout_centerHorizontal="true"
+    android:background="@color/black"
+    tools:context="eventtrackingapp.example.eventtrackingapp.EventDetailsActivity">
+
+    <androidx.gridlayout.widget.GridLayout
+
+        android:layout_width="379dp"
+        android:layout_height="571dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_column="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="@string/eventName"
+            android:textColor="@color/orange"
+            app:layout_column="0"
+            app:layout_row="0" />
+
+        <EditText
+            android:id="@+id/editTextName"
+            style="@style/EditTextStyle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/eventNameHint"
+            android:importantForAutofill="no"
+
+            android:inputType="text"
+            android:maxLines="1"
+            android:minHeight="48dp"
+            android:padding="6dp"
+            android:textColor="@color/white"
+
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:layout_column="0"
+            app:layout_row="1"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textViewDate"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="@string/eventDate"
+            android:textColor="@color/orange"
+            app:layout_column="0"
+            app:layout_row="2" />
+
+        <EditText
+            android:id="@+id/editTextDate"
+            style="@style/EditTextStyle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/eventDateHint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="3"
+            android:minHeight="48dp"
+            android:padding="6dp"
+            android:textColor="@color/grey"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:layout_column="0"
+            app:layout_row="3"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textViewTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="@string/eventTime"
+            android:textColor="@color/orange"
+            app:layout_column="0"
+
+            app:layout_row="4" />
+
+        <EditText
+            android:id="@+id/editTextTime"
+            style="@style/EditTextStyle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/eventTimeHint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="3"
+            android:minHeight="48dp"
+            android:padding="6dp"
+
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:layout_column="0"
+            app:layout_row="5"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <TextView
+            android:id="@+id/textViewDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:text="@string/eventDetails"
+            android:textColor="@color/orange"
+            app:layout_column="0"
+            app:layout_row="6" />
+
+        <EditText
+            android:id="@+id/editTextDetails"
+            style="@style/EditTextStyle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="@string/eventDetailsHint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="3"
+            android:minHeight="48dp"
+
+            android:padding="6dp"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            app:layout_column="0"
+            app:layout_row="7"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            style="@style/ButtonStyle"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/teal_200"
+            android:onClick="saveEvent"
+            android:text="@string/buttonSave"
+            android:textSize="25sp"
+            app:layout_column="0"
+            app:layout_gravity="start"
+
+
+            app:layout_row="9"
+            app:shapeAppearance="@style/CornerCut" />
+
+        <Button
+            android:id="@+id/buttonDelete"
+            style="@style/ButtonStyle"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/pink"
+            android:onClick="deleteEvent"
+            android:text="@string/buttonDelete"
+            android:textSize="25sp"
+            app:layout_column="0"
+
+
+            app:layout_gravity="start"
+            app:layout_row="10"
+            app:shapeAppearance="@style/CornerCut" />
+
+    </androidx.gridlayout.widget.GridLayout>
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">EventTime</string>
+    <string name="editPassword">Password</string>
+    <string name="buttonSignIn">Sign-In</string>
+    <string name="buttonRegister">Register</string>
+    <string name="editUserName">Username</string>
+    <string name="buttonEdit">Edit</string>
+    <string name="tempText">First Event</string>
+    <string name="permissionsText">Would you like to receive event notifications?</string>
+    <string name="radioButtonYes">Yes</string>
+    <string name="radioButtonNo">No</string>
+    <string name="radioButtonLater">Ask Later</string>
+    <string name="buttonSave">Save</string>
+    <string name="buttonSubmit">Submit</string>
+    <string name="buttonMonday">Monday</string>
+    <string name="buttonTuesday">Tuesday</string>
+    <string name="buttonWednesday">Wednesday</string>
+    <string name="buttonThursday">Thursday</string>
+    <string name="buttonFriday">Friday</string>
+    <string name="buttonSaturday">Saturday</string>
+    <string name="buttonSunday">Sunday</string>
+    <string name="daySelect">Choose a weekday</string>
+    <string name="toastText">Invalid username or password</string>
+    <string name="eventName">Name</string>
+    <string name="eventDate">Date</string>
+    <string name="eventTime">Time</string>
+    <string name="eventDetails">Details</string>
+    <string name="add">+</string>
+    <string name="buttonDelete">Delete</string>
+    <string name="eventNameHint">Ex: Clarice\'s Skating Party</string>
+    <string name="eventDateHint">Ex: Satruday, July 23rd</string>
+    <string name="eventTimeHint">Ex: 4:00-6:00 p.m.</string>
+    <string name="eventDetailsHint">Ex: 80\'s Dresscode</string>
+
+</resources>
