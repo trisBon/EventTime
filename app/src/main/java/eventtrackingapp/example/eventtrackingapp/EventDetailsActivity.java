@@ -1,10 +1,6 @@
 package eventtrackingapp.example.eventtrackingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.NotificationCompat;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +12,6 @@ public class EventDetailsActivity extends AppCompatActivity {
 
     private EditText editTextName, editTextDate, editTextTime, editTextDetails;
     private Event selectedEvent;
-    private String passedUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +33,6 @@ public class EventDetailsActivity extends AppCompatActivity {
             editTextTime.setText(selectedEvent.getEventTime());
             editTextDetails.setText(selectedEvent.getEventDetails());
         }
-        passedUser = previousIntent.getStringExtra(User.USER_EXTRA);
     }
 
     public void initWidgets()   {
@@ -61,8 +55,6 @@ public class EventDetailsActivity extends AppCompatActivity {
             Event newEvent = new Event(id,name,date,time,details);
             Event.eventArrayList.add(newEvent);
             databaseManager.addDatabaseEvent(newEvent);
-
-
         }
         // used when events are updated instead of added.
         else    {
@@ -71,7 +63,6 @@ public class EventDetailsActivity extends AppCompatActivity {
             selectedEvent.setEventTime(time);
             selectedEvent.setEventDetails(details);
             databaseManager.updateEventInDB(selectedEvent);
-
         }
 
         finish();

@@ -28,17 +28,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="eventtrackingapp.example.eventtrackingapp.EventGrid"
-            android:exported="false" />
-        <activity
             android:name="eventtrackingapp.example.eventtrackingapp.EventDetailsActivity"
             android:exported="false" />
         <activity
             android:name="eventtrackingapp.example.eventtrackingapp.EventAdapter"
             android:exported="false"
             tools:ignore="Instantiatable" />
-        <activity
-            android:name="eventtrackingapp.example.eventtrackingapp.Registration"
-            android:exported="false" />
+
     </application>
 </manifest>

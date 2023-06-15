@@ -1,121 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/black"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/black"
     tools:context="eventtrackingapp.example.eventtrackingapp.MainActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:minHeight="?actionBarSize"
+        android:theme="?actionBarTheme"
+        android:background="@color/black">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="188dp"
+            android:layout_height="85dp"
 
-    <EditText
-        android:id="@+id/usernameText"
-        style="@style/EditTextStyle"
-        android:hint="@string/editUserName"
-        android:inputType="textPersonName"
-        android:layout_width="210dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="356dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/passwordText"
-        style="@style/EditTextStyle"
-        android:hint="@string/editPassword"
-        android:inputType="textPassword"
-        android:layout_width="210dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="50dp"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:textColor="@color/white"
-        android:minHeight="48dp"
-        app:errorEnabled="true"
-        app:passwordToggleEnabled="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameText"
-        app:layout_constraintVertical_bias="0.014" />
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/eventtimelogo"
+            app:layout_constraintBottom_toTopOf="@+id/usernameText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="@style/CornerCut" />
 
-    <Button
 
-        android:id="@+id/buttonSignIn"
-        style="@style/ButtonStyle"
-        android:text="@string/buttonSignIn"
-        android:onClick="onSignInClicked"
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/actionButtonAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
 
-        android:backgroundTint="@color/teal_200"
-        android:layout_width="269dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordText"
-        app:layout_constraintVertical_bias="0.194"
-        app:shapeAppearance="@style/CornerCut" />
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/grey"
+            android:backgroundTint="@color/teal_200"
+            android:clickable="true"
+            android:contentDescription="@string/add"
+            android:onClick="onAddClicked"
+            app:borderWidth="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.954"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@android:drawable/ic_input_add"
+            tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 
-    <Button
-        android:id="@+id/buttonRegister"
-        style="@style/ButtonStyle"
-        android:text="@string/buttonRegister"
-        android:onClick="onRegisterClicked"
-        android:backgroundTint="@color/pink"
-        android:layout_width="0dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/buttonSignIn"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/buttonSignIn"
-        app:layout_constraintTop_toBottomOf="@+id/buttonSignIn"
-        app:shapeAppearance="@style/CornerCut" />
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:layout_width="300dp"
-        android:layout_height="220dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="124dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="16dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        android:src="@drawable/eventtimelogo"
-        app:layout_constraintBottom_toTopOf="@+id/usernameText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.454"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:shapeAppearance="@style/CornerCut" />
-
-    <TextView
-        android:id="@+id/appName"
-        style="@style/AppTitle"
-        android:layout_width="185dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="40dp"
-        android:textAlignment="viewStart"
-        android:textColor="#00BCD4"
-        android:textSize="33sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    </androidx.appcompat.widget.Toolbar>
 
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <GridView
+        android:id="@+id/eventListView"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="3dp"
+
+        android:dividerHeight="3dp" >
+
+
+    </GridView>
+
+
+
+
+
+</LinearLayout>

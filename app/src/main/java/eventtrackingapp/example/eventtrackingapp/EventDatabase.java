@@ -20,11 +20,6 @@ public class EventDatabase extends SQLiteOpenHelper {
     private static final String COLUMN_TIME="eTime";
     private static final String COLUMN_DETAILS="Details";
 
-    private static final String TABLE_UNAME ="User";
-    private static final String COLUMN_UNAME="uName";
-    private static final String COLUMN_PASSWORD="uPassword";
-    private static final String COLUMN_PERMISSION="uPermission";
-
     public EventDatabase(Context context) {
         super(context,EVENTS_DB, null, EVENTS_VERSION);
     }
@@ -33,7 +28,6 @@ public class EventDatabase extends SQLiteOpenHelper {
     public static EventDatabase instanceOfDatabase(Context context){
         if(databaseManager == null)
             databaseManager = new EventDatabase(context);
-
         return databaseManager;
     }
 
@@ -59,22 +53,6 @@ public class EventDatabase extends SQLiteOpenHelper {
                 .append(" TEXT)");
 
         sqLiteDatabase.execSQL(sql.toString());
-
-        // create schema for user table
-        StringBuilder user;
-        user = new StringBuilder()
-                .append("CREATE TABLE ")
-                .append(TABLE_UNAME)
-                .append("(")
-
-                .append(COLUMN_UNAME)
-                .append(" TEXT, ")
-                .append(COLUMN_PASSWORD)
-                .append(" TEXT, ")
-                .append(COLUMN_PERMISSION)
-                .append(" TEXT)");
-
-        sqLiteDatabase.execSQL(user.toString());
     }
 
     // add event to database
@@ -90,43 +68,6 @@ public class EventDatabase extends SQLiteOpenHelper {
 
         sqLiteDatabase.insert(TABLE_NAME, null, contentValues);
     }
-
-    // add user to database
-    public void addUser(User user)    {
-        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_UNAME, user.getUsername());
-        contentValues.put(COLUMN_PASSWORD, user.getPassword());
-       // contentValues.put(COLUMN_PERMISSION, user.getPermissionsID());
-
-        sqLiteDatabase.insert(TABLE_UNAME, null,contentValues);
-    }
-
-    // find a username and password match in th database
-    public boolean findUserInDB(String name, String pass) {
-        SQLiteDatabase userDatabase = this.getReadableDatabase();
-
-        String u,p;
-
-        try    {
-            Cursor cursor = userDatabase.query(TABLE_UNAME,new String[] {COLUMN_UNAME, COLUMN_PASSWORD}, COLUMN_UNAME + "= ? AND " + COLUMN_PASSWORD + "= ?", new String[] {name,pass}, null, null, null);
-            if (cursor.moveToFirst())   {
-                do {
-                    u = cursor.getString(0);
-                    if (u.equals(name)) {
-                        p = cursor.getString(1);
-                        if(p.equals(pass))
-                            return true;
-                    }
-                }
-                while(cursor.moveToNext());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
 
     // update event in database
     public void updateEventInDB(Event event) {
